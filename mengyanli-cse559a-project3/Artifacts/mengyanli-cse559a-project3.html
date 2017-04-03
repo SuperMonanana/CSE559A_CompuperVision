@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head><meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>mengyanli-cse559a-project3</title></head><body>
+  <big><big style="font-weight: bold;"><big>CSE 559A Project3: Eigenfaces<br>
+<small style="font-style: italic;"><small>Mengyan Li</small></small><br>
+<small><small>1. Testing recognition with cropped class images<br>
+</small></small></big></big><big><big><small><small>Average face:</small></small></big></big></big><big><big style="font-weight: bold;"><big><small><small><img style="width: 25px; height: 25px;" alt="average" src="images/average_face.jpg"></small></small></big></big></big><br>
+<big><big><big><small><small>Eigenfaces:<img style="width: 25px; height: 25px;" alt="0" src="images/eigen_face_0.jpg"> <img style="width: 25px; height: 25px;" alt="1" src="images/eigen_face_1.jpg"> <img style="width: 25px; height: 25px;" alt="2" src="images/eigen_face_2.jpg"> <img style="width: 25px; height: 25px;" alt="3" src="images/eigen_face_3.jpg"> <img style="width: 25px; height: 25px;" alt="4" src="images/eigen_face_4.jpg"> <img style="width: 25px; height: 25px;" alt="5" src="images/eigen_face_5.jpg"> <img style="width: 25px; height: 25px;" alt="6" src="images/eigen_face_6.jpg"> <img style="width: 25px; height: 25px;" alt="7" src="images/eigen_face_7.jpg"> <img style="width: 25px; height: 25px;" alt="8" src="images/eigen_face_8.jpg"></small></small></big></big></big> <big><big><big><small><small><img style="width: 25px; height: 25px;" alt="9" src="images/eigen_face_9.jpg"></small></small></big></big></big><br>
+<big><big><big><small><small>Experiment plot:</small></small></big></big></big><br>
+<img style="width: 400px; height: 300px;" alt="plot" src="images/recognizePlot.jpg"><br>
+Questions:<br>
+1. The general trend tends to be that the more Eigenfaces that are
+used, the more correctly recognized. However, using more Eigenfaces
+implies more expensive costs(time, space) and in some range of number
+of eigenfaces, the correct rate fluctuates in an interval. Therefore,
+there might not be a clear answer of how many eigenfaces we should use,
+it depends on whether the cost or the accuracy is required.<br>
+<br>
+2. Recognition errors(given 10 eigenfaces, but actually these two never works):<br>
+Interesting pictures: <img style="width: 83px; height: 100px;" alt="02interesting" src="images/02i.jpg"> <img style="width: 96px; height: 100px;" alt="04interesting" src="images/04i.jpg"><br>
+Best matches: <img style="width: 81px; height: 100px;" alt="02match" src="images/02match.jpg">&nbsp;<img style="width: 85px; height: 100px;" alt="04match" src="images/04match.jpg"> <br>
+Real neutral pictures: <img style="width: 82px; height: 100px;" alt="02neutral" src="images/02n.jpg"> <img style="width: 86px; height: 100px;" alt="04neutral" src="images/04n.jpg"><br>
+<big><big><small><small>The correct answer ranks 3 for the first, and 6 for the second. </small></small></big></big><big><big><big><small><small><small>I think wearing glasses may be an factor that makes the detection failed, the rotation might also be a reason. </small><br>
+</small></small></big></big><big style="font-weight: bold;"><big><small><small>2. Cropping and finding faces<br>
+</small></small></big></big><big><big><small><small>I used 10 eigenfaces for this part</small></small></big></big><big><big><small><small>.</small></small></big></big><big style="font-weight: bold;"><big><small><small><br>
+</small></small></big></big><big><big><small><small>The result for the cropped test image:</small></small></big></big><big style="font-weight: bold;"><big><small><small> <br>
+<img style="width: 102px; height: 264px;" alt="test" src="images/test_single.jpg">&nbsp;&nbsp;&nbsp; <img style="width: 47px; height: 47px;" alt="testresult" src="images/cropped_face_test.jpg"></small></small></big></big><big><big><small><small><br>
+The result for cropping my image:</small></small></big></big><big style="font-weight: bold;"><big><small><small><br>
+<img style="width: 120px; height: 160px;" alt="me" src="images/me.JPG">&nbsp;<img style="width: 51px; height: 51px;" alt="cropped me" src="images/cropped_me.jpg"><br>
+</small></small></big></big><big><big><small><small>The result for test group images:</small></small></big></big><big style="font-weight: bold;"><big><small><small> <br>
+<img style="width: 513px; height: 342px;" alt="mark0" src="images/marked_faces.jpg"><br>
+</small></small></big></big><big><big><small><small>min scale:0.45, max scale:0.6, step:0.05</small></small></big></big><big style="font-weight: bold;"><big><small><small><br>
+<br>
+<img style="width: 513px; height: 342px;" alt="mark1" src="images/marked_faces1.jpg"><br>
+</small></small></big></big></big><big><big><big><small><small>min scale:0.3, max scale:0.6, step:0.05</small></small></big></big></big><br>
+<br>
+<big><big style="font-weight: bold;"><big><small><small><img style="width: 513px; height: 342px;" alt="mark2" src="images/marked_faces2.jpg"><br>
+</small></small></big></big></big><big><big><big><small><small>min scale:0.45, max scale:0.5, step:0.05</small></small></big></big></big><br>
+<big><big><big><small><small>Result of the group picture I downloaded:</small></small></big></big><big style="font-weight: bold;"><big><small><small><br>
+<img style="width: 200px; height: 116px;" alt="mark custom" src="images/marked_faces_custom.jpg"><br>
+</small></small></big></big></big><big><big><big><small><small>min scale:0.8, max scale:1.0, step:0.005<br>
+This picture might be too small, and people wearing light color might be difficult to detect.<br>
+</small></small></big></big></big><big><big style="font-weight: bold;"><big><small><small>3. Verify Face<br>
+</small></small></big></big><big><small><small><big>I used 10 eigenfaces for this part.<br>
+I tried MSE threshold for 10000, 20000, 30000, 40000, 50000, 60000,
+70000, 80000, 90000, 100000, and find 20000 is the best value.<br>
+For MSE threshold = 20000,&nbsp; I have false positive number 4, and
+false negative number 13, the false positive rate is 0.69%, ad false
+negative rate is 2.26%<br>
+</big></small></small></big></big>
+
+</body></html>

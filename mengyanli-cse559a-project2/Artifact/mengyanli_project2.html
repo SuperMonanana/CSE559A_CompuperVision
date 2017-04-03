@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+
+
+<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>mengyanli_project2</title></head><body>
+<div style="text-align: center;"><big><big><big><span style="font-weight: bold;">CSE 559A Project 2 Panorama Stitching</span></big></big></big><br><br>
+<span style="font-weight: bold;">Mengyan Li</span><br>
+</div>
+<br>
+<big><span style="font-weight: bold;">Description</span></big><br>
+<br>
+In this project, I implemented panorama stiching in the following steps:<br>
+<ul>
+  <li>Take a series of pictures on a tripod. I resized my pictures to 480*640.<br>
+  </li>
+  <li>Warp
+to spherical coordinates based on the focal length and radial
+distortion. In my implementation, I didn't consider the distortion so I
+set the radial distortion coefficents to 0.<br>
+  </li>
+  <li>Extract features. I use the <a href="http://www.cs.ubc.ca/%7Elowe/keypoints/">SIFT package</a> to compute SIFT features.</li>
+  <li>Match features between neighboring pairs.<br>
+  </li>
+  <li>Align neighboring pairs using RANSAC. I set the iterations to 200 and distance threshold to 1.</li>
+  <li>Blending all images. I used 200 for blendingWidth.</li>
+</ul>
+<big><span style="font-weight: bold;">What worked well and what didn't</span></big><br>
+<ul>
+  <li>I test my algorithm on campus set first(parameters from README file). The output of alignPairs
+is the same as the given pairlists. I think the blending algorithm
+works even better as my panorama is more seamless than the given pano
+(I used 200 as blendingWidth).</li>
+  <li>The blending edge is obvious when exposure difference exists.</li>
+  <li>In my picture, the ghost effects result from distortion are
+especially significant in the corner of the architecture because I didn't do distortion correction.</li>
+  <li>I suppose the result might be better by increasing
+RANSAC iteration number and distance threshold but I don't have time to
+verify that.</li>
+
+</ul>
+<big style="font-weight: bold;">
+
+Results<br>
+<br>
+</big><big>Test sets - campus panorama</big><big style="font-weight: bold;"><br>
+<br>
+<img style="width: 1000px; height: 149px;" alt="test_campus panorama" src="images/uwsmall.jpg"><br>
+</big><a href="images/uw.jpg">Hi<big>gh resolution</big></a><big style="font-weight: bold;"><br>
+<br>
+</big><big>My pictures panorama</big><big style="font-weight: bold;"><br>
+<br>
+<img style="width: 1000px; height: 195px;" alt="my panorama here" src="images/brookingsmall"><br>
+</big><a href="images/brooking.jpg"><big>High resolution</big></a><big style="font-weight: bold;"><br>
+</big></body></html>

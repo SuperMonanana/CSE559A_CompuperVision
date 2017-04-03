@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>mengyanli-cse559a-project4</title></head><body><big><big><span style="font-weight: bold;">CSE 559A Project 4 Single View Modeling</span></big></big><br>
+<br>
+<span style="font-style: italic;">Mengyan Li</span><br>
+<br>
+<span style="font-weight: bold;">Room:<br>
+Source image:<br>
+</span>The picture is from the internet. It's a brand new room, I used this picture for testing.<span style="font-weight: bold;"><br>
+<img style="width: 1024px; height: 768px;" alt="" src="images/room.jpg"><br>
+<br>
+Screenshots of the UI program<br>
+<img style="width: 800px; height: 603px;" alt="" src="images/Screen%20Shot%202016-11-09%20at%206.38.03%20PM.jpg"><br>
+<img style="width: 800px; height: 601px;" alt="" src="images/Screen%20Shot%202016-11-09%20at%206.51.18%20PM.jpg"><br>
+<img style="width: 800px; height: 601px;" alt="" src="images/Screen%20Shot%202016-11-09%20at%207.15.02%20PM.jpg"><br>
+<br>
+Vanishing pts: room<br>
+</span>xvp=[-198783.578589 773.656736]<br>
+yvp=[513.679543 381.486597]<br>
+zvp=[950.576108 240745.167352]<span style="font-weight: bold;"><br>
+<br>
+homography:</span><span style="font-weight: bold;"></span><br>
+H=[<br>
+3.059898e+02&nbsp;&nbsp;&nbsp; 4.456548e+14&nbsp;&nbsp;&nbsp; 2.153089e+02;<br>
+-1.070539e+00&nbsp;&nbsp;&nbsp; 1.204934e+14&nbsp;&nbsp;&nbsp; 2.506683e+02;<br>
+1.083330e-03&nbsp;&nbsp;&nbsp; 8.545634e+11&nbsp;&nbsp;&nbsp; 1.000000e+00;<br>
+]<br>
+Hinv=[<br>
+-2.509409e-03&nbsp;&nbsp;&nbsp; -7.006204e-03&nbsp;&nbsp;&nbsp; 2.296532e+00;<br>
+3.593596e-17&nbsp;&nbsp;&nbsp; 8.186943e-15&nbsp;&nbsp;&nbsp; -2.059945e-12;<br>
+-2.799104e-05&nbsp;&nbsp;&nbsp; -6.988671e-03&nbsp;&nbsp;&nbsp; 1.000000e+00;<br>
+]<br>
+<span style="font-weight: bold;"><img style="width: 1278px; height: 660px;" alt="" src="images/snapshot01.jpg"></span><br>
+<span style="font-weight: bold;">Sketch:<br>
+Source image:<br>
+</span>It's from the internet<span style="font-weight: bold;">. </span>It's a modern style achitecture sketch.<span style="font-weight: bold;"><br>
+<img style="width: 1200px; height: 779px;" alt="" src="images/sketch.jpg"><br>
+UI Screenshot<br>
+<img style="width: 800px; height: 487px;" alt="" src="images/Screen%20Shot%202016-11-09%20at%2011.00.17%20PM.jpg"><br>
+<br>
+<img style="width: 800px; height: 488px;" alt="" src="images/Screen%20Shot%202016-11-09%20at%2011.02.23%20PM.jpg"><br>
+<br><img style="width: 800px; height: 513px;" alt="" src="images/polygon.jpg"><br>
+<br>
+The model:<br>
+<img style="width: 1278px; height: 660px;" alt="" src="images/sketchmodelsnapshot00.jpg"><br>
+<br>
+Vanishing points:</span><br>
+xvp=[1737.857191 143.048880] <br>
+yvp=[-367.327805 132.394210] <br>
+zvp=[10159.929082 -617688.879432]<br>
+<br>
+<span style="font-weight: bold;">Homography:</span><br>
+H=[<br>
+5.859887e+02&nbsp;&nbsp;&nbsp; 1.441779e+16&nbsp;&nbsp;&nbsp; 4.446480e+02;<br>
+4.768513e+01&nbsp;&nbsp;&nbsp; 3.828048e+16&nbsp;&nbsp;&nbsp; 6.467428e+02;<br>
+3.364462e-01&nbsp;&nbsp;&nbsp; 7.155230e+13&nbsp;&nbsp;&nbsp; 1.000000e+00;<br>
+]<br>
+Hinv=[<br>
+-3.677016e-04&nbsp;&nbsp;&nbsp; 8.001041e-04&nbsp;&nbsp;&nbsp; -3.539638e-01;<br>
+7.813917e-18&nbsp;&nbsp;&nbsp; 2.006900e-17&nbsp;&nbsp;&nbsp; -1.645392e-14;<br>
+-4.353919e-04&nbsp;&nbsp;&nbsp; -1.705175e-03&nbsp;&nbsp;&nbsp; 1.000000e+00;<br>
+]<br>
+<br>
+<span style="font-weight: bold;">How I make the final 3D models:</span><br>
+<ol>
+  <li>Draw 3 lines for xline, yline, zline respectively.<br>
+  </li>
+  <li>Calculate VPs</li>
+  <li>Manually enter the values of the 4 lower points, and push them into the stack.<br>
+  </li>
+  <li>Manually enter the value of 1 upper point and mark as height ref</li>
+  <li>Compute Homography</li>
+  <li>Manually assign coordinates to some of the polygons, and then use
+Same Z Plane and Same XY Plane to calculate the rest, and adjust the
+unappropiate points.</li>
+  <li>Create polygons out of each side of the box and name them.</li>
+  <li>Export as the wrl file type<br>
+  </li>
+  <li>Convert .tga files to .gif</li>
+  <li>Import the mesh (.wrl) file into Meshlab<br>
+  </li>
+</ol>
+<br>
+<br>
+
+
+</body></html>

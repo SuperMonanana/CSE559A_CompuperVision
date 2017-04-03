@@ -1,0 +1,30 @@
+﻿Build started 4/18/2013 2:45:53 PM.
+     1>Project "C:\Users\ankit\Desktop\576\Projects\Project_1\PackageProject_1\FeaturesSkel\ImageLib\ImageLib.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _VC80_UPGRADE=0x0710 /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Debug/" /Fd".\Debug/vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Convolve.cpp
+         Convolve.cpp
+     1>c:\users\ankit\desktop\576\projects\project_1\packageproject_1\featuresskel\imagelib\image.h(166): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\string.h(110) : see declaration of 'strcpy'
+     1>c:\users\ankit\desktop\576\projects\project_1\packageproject_1\featuresskel\imagelib\image.h(167): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(357) : see declaration of 'sprintf'
+     1>c:\users\ankit\desktop\576\projects\project_1\packageproject_1\featuresskel\imagelib\image.h(168): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(357) : see declaration of 'sprintf'
+     1>c:\users\ankit\desktop\576\projects\project_1\packageproject_1\featuresskel\imagelib\image.h(169): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(357) : see declaration of 'sprintf'
+     1>c:\users\ankit\desktop\576\projects\project_1\packageproject_1\featuresskel\imagelib\image.h(171): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(357) : see declaration of 'sprintf'
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\Lib.exe /OUT:".\Debug\ImageLib.lib" /NOLOGO .\Debug/Convert.obj
+         .\Debug/Convolve.obj
+         .\Debug/FileIO.obj
+         .\Debug/Image.obj
+         .\Debug/Pyramid.obj
+         .\Debug/RefCntMem.obj
+         .\Debug/Transform.obj
+         .\Debug/WarpImage.obj
+         ImageLib.vcxproj -> C:\Users\ankit\Desktop\576\Projects\Project_1\PackageProject_1\FeaturesSkel\ImageLib\.\Debug\ImageLib.lib
+     1>Done Building Project "C:\Users\ankit\Desktop\576\Projects\Project_1\PackageProject_1\FeaturesSkel\ImageLib\ImageLib.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:02.39

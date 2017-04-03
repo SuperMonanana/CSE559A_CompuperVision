@@ -1,0 +1,50 @@
+﻿Build started 4/1/2013 1:02:56 PM.
+     1>Project "C:\Users\ankit\Desktop\576\Projects\Project_1\PackageProject_1\FeaturesSkel\cse576.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I.\FLTK\ /Zi /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _VC80_UPGRADE=0x0710 /D _MBCS /Gm- /EHsc /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt FeaturesMain.cpp features.cpp
+         FeaturesMain.cpp
+     1>c:\users\ankit\desktop\576\projects\project_1\packageproject_1\featuresskel\imagelib\Image.h(166): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(110) : see declaration of 'strcpy'
+     1>c:\users\ankit\desktop\576\projects\project_1\packageproject_1\featuresskel\imagelib\Image.h(167): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : see declaration of 'sprintf'
+     1>c:\users\ankit\desktop\576\projects\project_1\packageproject_1\featuresskel\imagelib\Image.h(168): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : see declaration of 'sprintf'
+     1>c:\users\ankit\desktop\576\projects\project_1\packageproject_1\featuresskel\imagelib\Image.h(169): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : see declaration of 'sprintf'
+     1>c:\users\ankit\desktop\576\projects\project_1\packageproject_1\featuresskel\imagelib\Image.h(171): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : see declaration of 'sprintf'
+     1>FeaturesMain.cpp(163): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(218) : see declaration of 'fopen'
+     1>FeaturesMain.cpp(227): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(218) : see declaration of 'fopen'
+     1>FeaturesMain.cpp(677): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(218) : see declaration of 'fopen'
+     1>FeaturesMain.cpp(697): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(218) : see declaration of 'fopen'
+         features.cpp
+     1>c:\users\ankit\desktop\576\projects\project_1\packageproject_1\featuresskel\imagelib\Image.h(166): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(110) : see declaration of 'strcpy'
+     1>c:\users\ankit\desktop\576\projects\project_1\packageproject_1\featuresskel\imagelib\Image.h(167): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : see declaration of 'sprintf'
+     1>c:\users\ankit\desktop\576\projects\project_1\packageproject_1\featuresskel\imagelib\Image.h(168): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : see declaration of 'sprintf'
+     1>c:\users\ankit\desktop\576\projects\project_1\packageproject_1\featuresskel\imagelib\Image.h(169): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : see declaration of 'sprintf'
+     1>c:\users\ankit\desktop\576\projects\project_1\packageproject_1\featuresskel\imagelib\Image.h(171): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : see declaration of 'sprintf'
+         Generating Code...
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\ankit\Desktop\576\Projects\Project_1\PackageProject_1\FeaturesSkel\Debug\Features.exe" /INCREMENTAL /NOLOGO /LIBPATH:.\FLTK\lib Comctl32.lib fltkd.lib fltkformsd.lib fltkgld.lib fltkimagesd.lib fltkjpegd.lib fltkpngd.lib fltkzlibd.lib wsock32.lib opengl32.lib glu32.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /NODEFAULTLIB:libcd.lib /NODEFAULTLIB:libc.lib /NODEFAULTLIB:libcmtd.lib /NODEFAULTLIB:libcmt.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\ankit\Desktop\576\Projects\Project_1\PackageProject_1\FeaturesSkel\Debug\Features.pdb" /ASSEMBLYDEBUG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\ankit\Desktop\576\Projects\Project_1\PackageProject_1\FeaturesSkel\Debug\Features.lib" /MACHINE:X86 /SAFESEH Debug\features.obj
+         Debug\FeaturesDoc.obj
+         Debug\FeatureSet.obj
+         Debug\FeaturesMain.obj
+         Debug\FeaturesUI.obj
+         Debug\ImageDatabase.obj
+         Debug\ImageView.obj
+         C:\Users\ankit\Desktop\576\Projects\Project_1\PackageProject_1\FeaturesSkel\ImageLib\Debug\ImageLib.lib
+         cse576.vcxproj -> C:\Users\ankit\Desktop\576\Projects\Project_1\PackageProject_1\FeaturesSkel\Debug\Features.exe
+     1>Done Building Project "C:\Users\ankit\Desktop\576\Projects\Project_1\PackageProject_1\FeaturesSkel\cse576.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:05.87

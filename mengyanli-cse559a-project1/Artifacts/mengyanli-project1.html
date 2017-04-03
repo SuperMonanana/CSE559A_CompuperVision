@@ -1,0 +1,302 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+
+<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>cse559_project1_MengyanLi</title></head><body><big><big><span style="font-weight: bold;">CSE 559A&nbsp; Project1: Feature Detection and Matching</span></big></big><br>
+<br>
+<span style="font-style: italic;">Mengyan Li (mengyanli@wustl.edu)</span><br>
+ <br>
+This project includes three parts: feature detection, feature
+description, and feature matching. Feature detection and feature
+matching method are showed on project description page and the lecture
+slide. In this report, the details of
+descriptor will be discussed.<br>
+<br>
+<big><span style="font-weight: bold;">Feature Descriptor</span></big><br>
+<br>After features are detected, I came up with a descrptor for the feature centered at each interest point.<br>
+First, I implemented a simple 5*5 grayscale window descriptor. This
+just involves generating a 5*5 window sampled centered at each feature
+point and store them. If out of boundary, store 0.<br>
+<br>
+Then I implemented the <a href="http://graphics.cs.cmu.edu/courses/15-463/2007_fall/Papers/MOPS.pdf">Multi-Scale Oriented Patches (MOPS)</a> descriptor. This is also a grayscale descriptor. <br>
+The procedures are as follows:<br>
+<ol>
+  <li>Do Gaussian blur to the input gray image ( to reduce bad feature information)<br>
+  </li>
+  <li>Compute the gradients</li>
+</ol>
+For each feature points, descriptors are formed using an 8*8 sam- pling
+of normalised intensity values, with a sample spacing of 5 pixels
+relative to the detection scale. To be more detailed:<br>
+<ol>
+  <li>Compute the orientation (for rotation calculation)&nbsp;</li>
+  <li>Scale the blur image by 1/5 and rotate it horizontally<br>
+  </li>
+  <li>Sample an 8 * 8 patch</li>
+  <li>Normalize the intensities of the patch by subtracting the mean and dividing by the standard deviation<br>
+  </li>
+</ol>
+<big><span style="font-weight: bold;">Design Choices</span></big><br style="font-weight: bold;">
+<br>
+MOPS descriptor is robust to rotation, scale and illumination variance,
+therefore, it is less sensitive to exact feature location.&nbsp;
+However, as the simple descriptor, this descriptor also takes grayscale
+iamge. It is easy to implement(actualy the best I can implement before
+due date), but color information might help somtimes.<br>
+<br>
+<big><span style="font-weight: bold;">Performance</span></big><br>
+<br style="font-weight: bold;">
+<span style="font-weight: bold;">ROC cureves and AUC values for graf and Yosemite images</span><br>
+<br>
+ROC curves for graf images(img1.ppm and img2.ppm)<br>
+<img style="width: 640px; height: 480px;" alt="If image cannot be viewed, please email me at mengyanli@wustl.edu" src="./images/plot.grafroc.jpg"><br>
+<br>
+AUC values for graf images<br>
+<table style="text-align: left; width: 100%;" border="1" cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top; width: 215px;">Type<br>
+      </td>
+      <td style="vertical-align: top; width: 204px;">AUC<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 215px;">Simple + SSD<br>
+      </td>
+      <td style="vertical-align: top; width: 204px;">0.608649<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 215px;">Simple + ratio test<br>
+      </td>
+      <td style="vertical-align: top; width: 204px;">0.573974<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 215px;">MOPS + SSD<br>
+      </td>
+      <td style="vertical-align: top; width: 204px;">0.765252<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 215px;">MOPS + ratio test<br>
+      </td>
+      <td style="vertical-align: top; width: 204px;">0.844154<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+ROC curves for Yosemite images<br>
+<img style="width: 640px; height: 480px;" alt="If image is missed, please email me at mengyanli@wustl.edu" src="./images/plot.yosemiteroc.jpg"><br>
+<br>
+AUC values for Yosemite images<br>
+<table style="text-align: left; width: 100%;" border="1" cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top; width: 208px;">Type<br>
+      </td>
+      <td style="vertical-align: top; width: 211px;">AUC<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 208px;">Simple + SSD<br>
+      </td>
+      <td style="vertical-align: top; width: 211px;">0.835979<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 208px;">Simple + ratio test<br>
+      </td>
+      <td style="vertical-align: top; width: 211px;">0.852168<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 208px;">MOPS + SSD<br>
+      </td>
+      <td style="vertical-align: top; width: 211px;">0.872381<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 208px;">MOPS + ratio test<br>
+      </td>
+      <td style="vertical-align: top; width: 211px;">0.926571<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<span style="font-weight: bold;">Harris Operators</span><br>
+<br>
+<table style="text-align: left; width: 100%;" border="1" cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top; width: 742px;">Harris Operators for graf img2<br>
+      </td>
+      <td style="vertical-align: top; width: 698px;">Harris operator for Yosemite2<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 742px;"><img style="width: 598px; height: 479px;" alt="graf Harris, if missing, please email me at mengyanli@wustl.edu" src="./images/harris2graf.jpg"></td>
+      <td style="vertical-align: top; width: 698px;"><span style="font-weight: bold;"><img style="width: 640px; height: 480px;" alt="harris Yosemite, if missing, please email me at mengyanli@wustl.edu" src="./images/harris2Yosemite.jpg"></span></td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<span style="font-weight: bold;"><br>
+The average AUC for the four benchmark sets<br>
+</span>bikes:<span style="font-weight: bold;"><br>
+</span>
+<table style="text-align: left; width: 100%;" border="1" cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top; width: 207px;">Simple + SSD<br>
+      </td>
+      <td style="vertical-align: top; width: 212px;">0.238829<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 207px;">Simple + ratio test<br>
+      </td>
+      <td style="vertical-align: top; width: 212px;">0.537193<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 207px;">MOPS + SSD<br>
+      </td>
+      <td style="vertical-align: top; width: 212px;">0.859272<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 207px;">MOPS + ratio test<br>
+      </td>
+      <td style="vertical-align: top; width: 212px;">0.851477<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<span style="font-weight: bold;"><br>
+</span>graf:<span style="font-weight: bold;"><br>
+</span>
+<table style="text-align: left; width: 100%;" border="1" cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top; width: 206px;">Simple + SSD</td>
+      <td style="vertical-align: top; width: 213px;">0.537193<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 206px;">Simple + ratio test</td>
+      <td style="vertical-align: top; width: 213px;">0.548594<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 206px;">MOPS + SSD</td>
+      <td style="vertical-align: top; width: 213px;">0.652583<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 206px;">MOPS + ratio test</td>
+      <td style="vertical-align: top; width: 213px;">0.713437<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<span style="font-weight: bold;"><br>
+</span>leuven:<span style="font-weight: bold;"><br>
+</span>
+<table style="text-align: left; width: 100%;" border="1" cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top; width: 207px;">Simple + SSD</td>
+      <td style="vertical-align: top; width: 212px;">0.218876<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 207px;">Simple + ratio test</td>
+      <td style="vertical-align: top; width: 212px;">0.543421<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 207px;">MOPS + SSD</td>
+      <td style="vertical-align: top; width: 212px;">0.772601<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 207px;">MOPS + ratio test</td>
+      <td style="vertical-align: top; width: 212px;">0.861201<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<span style="font-weight: bold;"><br>
+</span>wall:<span style="font-weight: bold;"><br>
+</span>
+<table style="text-align: left; width: 100%;" border="1" cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top; width: 205px;">Simple + SSD</td>
+      <td style="vertical-align: top; width: 214px;">0.348707<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 205px;">Simple + ratio test</td>
+      <td style="vertical-align: top; width: 214px;">0.618277<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 205px;">MOPS + SSD</td>
+      <td style="vertical-align: top; width: 214px;">0.751342<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; width: 205px;">MOPS + ratio test</td>
+      <td style="vertical-align: top; width: 214px;">0.782445<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<span style="font-weight: bold;"><big><br>
+</big></span><span style="font-weight: bold;">My own images<br>
+</span>
+<table style="text-align: left; width: 100%;" border="1" cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top;"><span style="font-weight: bold;"><img style="width: 599px; height: 450px;" alt="myimage" src="./images/myimg.jpg"></span></td>
+      <td style="vertical-align: top;"><img style="width: 597px; height: 448px;" alt="myimage detected" src="./images/myimg_detect.jpg"><br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<span style="font-weight: bold;"><br>
+</span><span style="font-weight: bold;"><big><br>
+Strength and Weakness</big><br>
+<br>
+</span>My algorithm for feature dection is quite good. I used 0.05 as the threshold when computing the local maxima<span style="font-weight: bold;">, </span>which looks promising. As shown in my own image feature detection, it detects the logo Arch succefully.<br>
+<br>
+&nbsp;As for my descriptor, although worse than SIFT, it is quite
+robust, as it takes scale, rotation and illumination(by normalization)
+into consideration.<span style="font-weight: bold;"> </span><br>
+<br>
+The ROC curves and AUC values of&nbsp; graf&nbsp; and Yosemite images
+show that my MOPS performs better than simple descriptor. SSD matching
+sometimes overperforms the ratio test method when simple derciptor is
+applied, as&nbsp; SSD might compute error&nbsp; more precisely when a
+descriminative descrptor is used.<br>
+<br>
+For bikes and leuven set, which are mainly about illumination, my MOPS
+descriptor improves the matching performance greatly. For wall set, my
+algorithm work reasonably well, but the performance barely improved for
+graf set. The reason for this might be both the rotation and the
+pattern complexity. In these two sets, both rotation and translation
+affect, while the wall pattern is much more simple. Therefore, my
+algorithm is not strong enough for the rotation<br>
+<br>
+<span style="font-weight: bold;"><br>
+Credits<br>
+</span><br>
+I discussed with<span style="font-weight: bold;"> </span>Wenjia Zhang, and Yu He<span style="font-weight: bold;"><br>
+<br>
+</span>My descriptor implementation is based on <span style="font-style: italic;">Matthew Brown, Richard Szeliski, Simon Winder. </span>Multi-Image Matching using Multi-Scale Oriented Patches<span style="font-weight: bold;"><br>
+</span><br>
+
+</body></html>
